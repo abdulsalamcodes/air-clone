@@ -1,0 +1,41 @@
+.Label__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #a0a0a0;
+    padding-bottom: .3rem;
+    margin-top: 3rem;
+    font-family: var(--open-sans-font);
+}
+
+.Label__header h4 {
+    font-weight: 300px;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.Leader__header__button {
+    border: none;
+    background-color: transparent;
+    color: blue;
+    cursor: pointer;
+
+}
+
+.Leader__header__button:hover {
+    text-decoration: underline;
+}
+.Labels {
+    margin-top: 1rem;
+}
+
+.Label {
+    background-color: transparent;
+    border: none;
+    padding: .5rem;
+    color: #444444;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    
+}

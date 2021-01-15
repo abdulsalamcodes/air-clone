@@ -1,0 +1,18 @@
+.Boards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+.Boards__heading {
+    font-weight: bold;
+    margin-bottom: 1rem; 
+    font-size: 1.7rem;
+}
+.Boards__sub-heading {
+    color: #8e8e8e;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-family: var(--open-sans-font);
+    font-size: 15px;
+}

@@ -1,0 +1,26 @@
+.Asset__Wrapper {
+    font-family: var(--open-sans-font);
+    margin-top: 4rem;
+}
+.Asset__Wrapper header {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.Asset__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.Asset__Image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.Asset__Name {
+    color: #777777;
+    font-size: 15px;
+    text-transform: capitalize;
+}

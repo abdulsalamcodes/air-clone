@@ -1,0 +1,29 @@
+.Board {
+    border-radius: 3px;
+    /* width: 240px; */
+    padding: .4rem;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+
+.Board:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+.Board__image {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.Board p, .Board h5 {
+    margin: 0;
+}
+.Board__footer {
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
