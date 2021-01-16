@@ -16,11 +16,12 @@ function Dashboard() {
                     <Route exact path="/search">
                         <SearchPage />
                     </Route>
-
-                    <Route path="/workspace-boards">
+                    
+                    <Route  path="/workspace-boards/:collection">
                         <Workspace />
                     </Route>
-                    <Route  path="/workspace-boards/:collection">
+
+                    <Route path="/workspace-boards">
                         <Workspace />
                     </Route>
                     <Route exact path="/">

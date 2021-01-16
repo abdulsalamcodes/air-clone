@@ -20,13 +20,17 @@ function Boards({ heading, sub_heading }) {
             })
     }, [])
 
-    const handleClick = (id) => {
-        history.push(`/workspace-boards/${id}`)
+    const handleClick = (id, title) => {
+        console.log(id)
+        history.push({
+            pathname: `/workspace-boards/${id}`,
+            search: `?title=${title}`
+        })
     }
 
     let content = loading ? <Spinner /> : <div className="Boards">
         {collections.map(collection => {
-            return <Board key={collection.id} handleClick={() => handleClick(collection.id)} cover_photo={collection.cover_photo.urls.small} title={collection.title} />
+            return <Board key={collection.id} handleClick={() => handleClick(collection.id, collection.title)} cover_photo={collection.cover_photo.urls.small} title={collection.title} />
         })}
     </div>
 

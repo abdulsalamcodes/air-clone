@@ -8,7 +8,7 @@ function Label({heading, dataArray }) {
                 <button className="Leader__header__button">See All</button>
             </header>
             <div className="Labels">
-                {dataArray.map(label => <button className="Label">{label}</button>)}
+                {dataArray.map(label => <button key={label} className="Label">{label}</button>)}
             </div>
         </div>
     )
