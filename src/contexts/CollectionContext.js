@@ -11,7 +11,6 @@ function CollectionContextProvider(props) {
     const [assets, setAssets] = useState([]);
 
     let history = useHistory();
-    let arrayOfAssets = [];
 
     // Fetch List of Collections from unsplash API
     useEffect(() => {
@@ -29,6 +28,7 @@ function CollectionContextProvider(props) {
 
     useEffect(() => {
         // eslint-disable-next-line array-callback-return
+        let arrayOfAssets = [];
         collections.map(collection => {
             axios.get(`collections/${collection.id}/photos`)
                 .then(res => {
@@ -37,6 +37,7 @@ function CollectionContextProvider(props) {
                 .catch(error => {
                     console.log(error)
                 })
+            return arrayOfAssets;
         })
         setLoading(false)
         setAssets(arrayOfAssets)
