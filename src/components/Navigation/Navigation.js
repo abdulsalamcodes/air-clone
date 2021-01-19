@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Sidebar.css";
+import "./Navigation.css";
 import { NavLink } from 'react-router-dom'
 import { BiHomeAlt } from "react-icons/bi";
 import { FiDownload, FiSearch } from "react-icons/fi";
@@ -11,9 +11,9 @@ import Logo from "../../assets/air-logo.png"
 import ToolTip from '../UI/ToolTip/ToolTip';
 
 
-function Sidebar() {
+function Navigation() {
     return (
-        <div className="sidebar">
+        <div className="navbar">
             <div>
                 <button className="logo">
                     <img src={Logo} alt="Air Clone Logo" className="logo__image" />
@@ -56,4 +56,4 @@ function Sidebar() {
     )
 }
 
-export default Sidebar
+export default Navigation

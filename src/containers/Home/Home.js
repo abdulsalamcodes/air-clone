@@ -1,25 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Assets from '../../components/Assets/Assets'
 import Boards from '../../components/Boards/Boards'
 import Label from '../../components/Labels/Labels'
+import { CollectionContext } from '../../contexts/CollectionContext';
 import { labelArray, Row2Column, smartTagArray } from '../../shared'
 
 function Home() {
+    const { assets, loading, loadingA } = useContext(CollectionContext);
+    
     return (
         <div>
-            {/* Recently Viewed Boards */}
-            <Boards heading="Jump back In" sub_heading="RECENTLY VIEWED" />
-            {/* Recent Updates in Boards */}
-            <Boards heading="Recent updates in the Demo" sub_heading="Boards" />
-            {/* Labels */}
+            {/* <Boards heading="Jump back In" sub_heading="RECENTLY VIEWED" /> */}
+            <Boards heading="Recent updates in the Demo" sub_heading="Boards" loading={loadingA} />
             <Row2Column>
                 <Label heading="Labels" dataArray={labelArray} />
                 <Label heading="Smart Tags" dataArray={smartTagArray} />
             </Row2Column>
-
-            {/* Assets */}
-
-            <Assets />
+            <Assets loading={loading} assets={assets} />
+            <button onClick={() => console.log(assets)}>load</button>
         </div>
     )
 }

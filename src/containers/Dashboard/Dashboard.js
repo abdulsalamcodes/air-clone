@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Sidebar from '../../components/Sidebar/Sidebar'
+import Navigation from '../../components/Navigation/Navigation'
 import Home from '../Home/Home'
 import SearchPage from '../SearchPage/SearchPage'
 import "./Dashboard.css"
@@ -10,7 +10,7 @@ import Workspace from '../Workspace/Workspace'
 function Dashboard() {
     return (
         <div className="dashboard">
-            <Sidebar />
+            <Navigation />
             <PageLayout>
                 <Switch>
                     <Route exact path="/search">
@@ -28,7 +28,6 @@ function Dashboard() {
                         <Home />
                     </Route>
                 </Switch>
-
             </PageLayout>
         </div>
     )

@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import axios from "../../axios-photos"
 import Assets from '../../components/Assets/Assets';
-import Spinner from '../../components/UI/Spinner/Spinner';
+import Boards from '../../components/Boards/Boards';
+// import Spinner from '../../components/UI/Spinner/Spinner';
 
 function Workspace() {
     let { collection } = useParams();
-    const [loading, setLoading] = useState(true)
-
+    const [loading, setLoading] = useState(true);
     const [collectionAssets, setCollectionAssets] = useState([]);
     let location = useLocation();
     let search = new URLSearchParams(location.search);
@@ -18,6 +18,7 @@ function Workspace() {
     }
 
     useEffect(() => {
+        console.log(collection)
         axios.get(`collections/${collection}/photos`)
             .then(res => {
                 console.log(res.data)
@@ -27,14 +28,14 @@ function Workspace() {
             .catch(error => {
                 console.log(error)
             })
+
     }, [collection])
 
-
+    let content = <Boards />;
     return (
         <div>
             <h1>{title}</h1>
-            {loading ? <Spinner /> : <Assets assets={collectionAssets} />}
-
+            {loading ? content : <Assets assets={collectionAssets} />}
         </div>
     )
 }
