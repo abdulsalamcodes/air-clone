@@ -31,7 +31,7 @@ function Workspace() {
 
     }, [collection])
 
-    let content = <Boards />;
+    let content = <Boards heading="Your Boards" />;
     return (
         <div>
             <h1>{title}</h1>

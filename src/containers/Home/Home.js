@@ -17,7 +17,6 @@ function Home() {
                 <Label heading="Smart Tags" dataArray={smartTagArray} />
             </Row2Column>
             <Assets loading={loading} assets={assets} />
-            <button onClick={() => console.log(assets)}>load</button>
         </div>
     )
 }

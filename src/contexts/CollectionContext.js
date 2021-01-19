@@ -17,31 +17,27 @@ function CollectionContextProvider(props) {
         axios.get("/collections")
             .then(res => {
                 setCollections(res.data);
-                setLoadingA(false)
-
+                setLoadingA(false);
+                let arrayOfAssets = [];
+                res.data.map(collection => {
+                    axios.get(`collections/${collection.id}/photos`)
+                        .then(res => {
+                            arrayOfAssets.push(...res.data)
+                            setAssets([...arrayOfAssets])
+                            setLoading(false)
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
+                    return arrayOfAssets;
+                })
             })
             .catch(error => {
                 console.log(error)
             })
 
-    }, [])
-
-    useEffect(() => {
-        // eslint-disable-next-line array-callback-return
-        let arrayOfAssets = [];
-        collections.map(collection => {
-            axios.get(`collections/${collection.id}/photos`)
-                .then(res => {
-                    arrayOfAssets.push(...res.data)
-                })
-                .catch(error => {
-                    console.log(error)
-                })
-            return arrayOfAssets;
-        })
         setLoading(false)
-        setAssets(arrayOfAssets)
-    }, [collections])
+    }, [])
 
 
     // Clicking on a collection to redirect to single Collection Page

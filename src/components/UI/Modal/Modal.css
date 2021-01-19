@@ -1,0 +1,21 @@
+.Modal {
+    width: 70%;
+    /* max-width: 600px; */
+    margin: auto;
+    transition: all .3s ease-in;
+    animation: animate .3s ease-in;
+    transform: translateY(0);
+}
+
+@keyframes animate {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
