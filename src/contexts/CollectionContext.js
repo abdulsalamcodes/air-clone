@@ -23,7 +23,8 @@ function CollectionContextProvider(props) {
                     axios.get(`collections/${collection.id}/photos`)
                         .then(res => {
                             arrayOfAssets.push(...res.data)
-                            setAssets([...arrayOfAssets])
+                            let newAssets = [...arrayOfAssets]
+                            setAssets(newAssets);
                             setLoading(false)
                         })
                         .catch(error => {

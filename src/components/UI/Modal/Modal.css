@@ -1,6 +1,6 @@
 .Modal {
-    width: 70%;
-    /* max-width: 600px; */
+    width: 90%;
+    max-width: 1000px;
     margin: auto;
     transition: all .3s ease-in;
     animation: animate .3s ease-in;
